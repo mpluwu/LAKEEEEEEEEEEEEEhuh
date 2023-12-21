@@ -4,7 +4,7 @@ timeline=[]
 def qiymet(n):
     n=7*(n-1)
     timeline.append(ph[n:n+7])
-def phyoxlama(n):
+def phyoxlama(n):                
     n=n-1
     phnetice=[]
     abc=timeline[n]
@@ -43,7 +43,9 @@ def phyoxlama(n):
                     phnetice[6]='temir'
         else:
             print('Neticede filan filan xestelikler olacaq')
-    print(phnetice)
+        print(phnetice)
+    else:
+        print("Her sey qaydasindadir")
 a=int(input())
 b=int(input())
 qiymet(a)
