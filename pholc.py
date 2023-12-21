@@ -2,7 +2,7 @@ ph=[5.5,	9,	8.4,	9,	8.5,	8.5,	8.5,8.4,	8.3,	8.3,	8.3,	8.4,	8.3,	8.3		]
 phnorm=[6.5,8.5]
 timeline=[]
 def qiymet(n):
-    n=n-1
+    n=7*(n-1)
     timeline.append(ph[n:n+7])
 def phyoxlama(n):
     n=n-1
@@ -45,7 +45,9 @@ def phyoxlama(n):
             print('Neticede filan filan xestelikler olacaq')
     print(phnetice)
 a=int(input())
+b=int(input())
 qiymet(a)
-
+qiymet(b)
 print(timeline)
 phyoxlama(a)
+phyoxlama(b)
