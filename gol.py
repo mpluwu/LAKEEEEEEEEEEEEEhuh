@@ -1,3 +1,4 @@
+ph=[8.5,	8.5,	8.4,	8.4,	8.5,	8.5,	8.5,8.4,	8.3,	8.3,	8.3,	8.4,	8.3,	8.3		]
 iyi=[]
 dadi=[]
 rengpt=[]
@@ -9,7 +10,7 @@ hidrokar=[]
 hidrogen=[]
 aluminium=[]
 nh3=[]
-arsen=[}
+arsen=[]
 demir=[]
 ag=[]
 hidrosulfid=[]
@@ -36,41 +37,8 @@ sianids=[]
 timeline=[]
 def qiymet(n):
   n=n-1
-  timeline.append(iyi[n:n+7])
-  timeline.append(dadi[n:n+7])
-  timeline.append(rengpt[n:n+7])
-  timeline.append(rengbicr[n:n+7])
-  timeline.append(bulaniq[n:n+7])
-  timeline.append(codluq[n:n+7])
-  timeline.append(elek20[n:n+7])
-  timeline.append(hidrokar[n:n+7])
-  timeline.append(hidrogen[n:n+7])
-  timeline.append(aluminium[n:n+7])
-  timeline.append(nh3[n:n+7])
-  timeline.append(arsen[n:n+7])
-  timeline.append(demir[n:n+7])
-  timeline.append(ag[n:n+7])
-  timeline.append(hidrosulfid[n:n+7])
-  timeline.append(hidrisulfid[n:n+7])
-  timeline.append(cloride[n:n+7])
-  timeline.append(clorfree[n:n+7])
-  timeline.append(cloradd[n:n+7])
-  timeline.append(xlorationu[n:n+7])
-  timeline.append(kalium[n:n+7])
-  timeline.append(kalsium[n:n+7])
-  timeline.append(manqan[n:n+7])
-  timeline.append(mis[n:n+7])
-  timeline.append(molibden[n:n+7])
-  timeline.append(maqnezium[n:n+7])
-  timeline.append(natrium[n:n+7])
-  timeline.append(nikel[n:n+7])
-  timeline.append(nitratlar[n:n+7])
-  timeline.append(nitrit[n:n+7])
-  timeline.append(polifosfat[n:n+7])
-  timeline.append(stronsium[n:n+7])
-  timeline.append(zn[n:n+7])
-  timeline.append(sulfats[n:n+7])
-  timeline.append(sianids[n:n+7])
+  timeline.append(ph[n:n+7])
 a=int(input())
-print(qiymet(a))
+qiymet(a)
+print(timeline)
 
