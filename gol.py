@@ -9,7 +9,7 @@ hidrokar=[-2,-2,-2]
 hidrogen=[6,7,8]
 aluminium=[]
 nh3=[]
-arsen=[]
+arsen=[}
 demir=[]
 ag=[]
 hidrosulfid=[]
@@ -33,8 +33,12 @@ stronsium=[]
 zn=[]
 sulfats=[]
 sianids=[]
-month6={'na':[6],'polfos':[6]}
-month7={'na':[8],'polfos':[6]}
+timeline=[]
+def qiymet(n):
+  n=n-1
+  timeline.append(iyi[n])
+  timeline.append(dadi[n])
+
 a=input()
 a='month'+a
 print(dict(a))
