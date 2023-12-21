@@ -36,7 +36,7 @@ sulfats=[]
 sianids=[]
 timeline=[]
 def qiymet(n):
-  n=n-1
+  n=7*(n-1)
   timeline.append(ph[n:n+7])
 a=int(input())
 qiymet(a)
