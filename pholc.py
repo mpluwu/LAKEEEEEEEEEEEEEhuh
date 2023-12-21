@@ -51,4 +51,3 @@ qiymet(a)
 
 print(timeline)
 phyoxlama(a)
-phyoxlama(a)
