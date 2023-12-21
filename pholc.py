@@ -1,20 +1,18 @@
 ph=[5.5,	9,	8.4,	9,	8.5,	8.5,	8.5,8.4,	8.3,	8.3,	8.3,	8.4,	8.3,	8.3		]
-phnorm=[6.5,8.5,6.6,9,3,8,1,10,6,90,2,45,7,90]
+phnorm=[6.5,8.5]
 timeline=[]
 def qiymet(n):
     n=n-1
     timeline.append(ph[n:n+7])
 def phyoxlama(n):
     n=n-1
-    p=0
     phnetice=[]
     abc=timeline[n]
     for i in range(len(abc)):
-        if phnorm[p]<= abc[i]<=phnorm[p+1]:
+        if phnorm[0]<= abc[i]<=phnorm[1]:
             phnetice.append(abc[i])
         else:
             phnetice.append('normadan kenar')
-        p+=2
     print(phnetice)
     if 'normadan kenar' in phnetice:
         a=input('Menteqelere melumat gonderilsinmi?')
