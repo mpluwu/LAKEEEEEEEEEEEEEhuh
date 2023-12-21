@@ -71,6 +71,6 @@ def qiymet(n):
   timeline.append(zn[n])
   timeline.append(sulfats[n])
   timeline.append(sianids[n])
+a=int(input())
+print(qiymet(a))
 
-print(dict(a))
-month8=[]
