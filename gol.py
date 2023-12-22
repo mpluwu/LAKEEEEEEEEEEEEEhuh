@@ -83,4 +83,5 @@ def phyoxlama(n):
 a=int(input())
 qiymet(a)
 print(timeline)
+phyoxlama(a)
 
