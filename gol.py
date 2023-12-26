@@ -45,7 +45,10 @@ zn=[]
 sulfats=[]
 sianids=[]
 timeline=[]
+dates=["Yanvar 2018", "Fevral 2018"]
+essential=[]
 def qiymet(n):
+  essential.append(dates[n-1])
   n=7*(n-1)
   timeline.append(ph[n:n+7])
 def phyoxlama(n):                
@@ -90,9 +93,11 @@ def phyoxlama(n):
         print(phnetice)
     else:
         print("Her sey qaydasindadir")
-a=int(input())
-for i in range(a):
-    qiymet(int(input()))
+print("Ph üzrə:")
+for i in range(int(input())):
+    b=int(input())
+    qiymet(b)
 print(timeline)
+print(essential)
 a=int(input())
 phyoxlama(a)
