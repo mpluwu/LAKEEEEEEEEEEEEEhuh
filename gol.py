@@ -1,4 +1,4 @@
-ph=[8.5,8.5,8.4,8.4,8.5,8.5,8.5,8.4,8.3,8.3,8.3,8.4,8.3,8.3,0 ,8.6,8.6,8.6,8.6,8.6,8.6	]
+ph=[8.5,8.5,8.4,8.4,8.5,8.5,8.5,8.4,8.3,8.3,8.3,8.4,8.3,8.3,0 ,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.5,8.6,8.6,8.6,8.6,8.6,8.6,8.5,8.6]
 phnorm=[6.5,8.5]
 iyi=[]
 dadi=[]
@@ -45,7 +45,7 @@ zn=[]
 sulfats=[]
 sianids=[]
 timeline=[]
-dates=["Yanvar 2018", "Fevral 2018", "Mart 2018"]
+dates=["Yanvar 2018", "Fevral 2018", "Mart 2018", "Aprel 2018","May 2018"]
 essential=[]
 def qiymet(n):
   essential.append(dates[n-1])
@@ -100,7 +100,6 @@ print("Ph üzrə:")
 for i in range(int(input())):
     b=int(input())
     qiymet(b)
-print(timeline)
 print(essential)
 a=int(input())
 phyoxlama(a)
