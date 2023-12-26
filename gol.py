@@ -1,4 +1,4 @@
-ph=[5.5,	9,	8.4,	9,	8.5,	8.5,	8.5,8.4,	8.3,	8.3,	8.3,	8.4,	8.3,	8.3		]
+ph=[8.5,8.5,8.4,8.4,8.5,8.5,8.5,8.4,8.3,8.3,8.3,8.4,8.3,8.3,0 ,8.6,8.6,8.6,8.6,8.6,8.6	]
 phnorm=[6.5,8.5]
 iyi=[]
 dadi=[]
@@ -45,7 +45,7 @@ zn=[]
 sulfats=[]
 sianids=[]
 timeline=[]
-dates=["Yanvar 2018", "Fevral 2018"]
+dates=["Yanvar 2018", "Fevral 2018", "Mart 2018"]
 essential=[]
 def qiymet(n):
   essential.append(dates[n-1])
@@ -56,10 +56,13 @@ def phyoxlama(n):
     phnetice=[]
     abc=timeline[n]
     for i in range(len(abc)):
-        if phnorm[0]<= abc[i]<=phnorm[1]:
-            phnetice.append(abc[i])
+        if abc[i]==0:
+            phnetice.append('teyin olunmayib')
         else:
-            phnetice.append('normadan kenar')
+            if phnorm[0]<= abc[i]<=phnorm[1]:
+                phnetice.append(abc[i])
+            else:
+                phnetice.append('normadan kenar')
     print(phnetice)
     if 'normadan kenar' in phnetice:
         a=input('Menteqelere melumat gonderilsinmi?')
