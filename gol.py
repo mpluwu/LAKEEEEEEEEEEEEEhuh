@@ -96,7 +96,7 @@ def phyoxlama(n):
         print(phnetice)
     else:
         print("Her sey qaydasindadir")
-print("Ph üzrə:")
+print("Ph üzrə: "+str(len(dates))+ " zaman")
 for i in range(int(input())):
     b=int(input())
     qiymet(b)
