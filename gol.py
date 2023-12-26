@@ -91,7 +91,8 @@ def phyoxlama(n):
     else:
         print("Her sey qaydasindadir")
 a=int(input())
-qiymet(a)
+for i in range(a):
+    qiymet(int(input()))
 print(timeline)
+a=int(input())
 phyoxlama(a)
-
