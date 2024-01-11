@@ -41,7 +41,6 @@ def change_value():
         if k=='yes':
             k=simpledialog.askstring(title='????',prompt='Hansi?')
             k=k.capitalize()
-#######################################################
         c=dates_2018.index(k)
         h=[]
         for i in range(7):
