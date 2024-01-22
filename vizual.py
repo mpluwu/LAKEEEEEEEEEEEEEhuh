@@ -5,7 +5,6 @@ from tkinter import simpledialog
 from tkinter import messagebox
 from tkinter.ttk import *
 from PIL import Image, ImageTk
-import pandas as pd
 ph=[8.5,8.5,8.4,8.4,8.5,8.5,8.5,8.4,8.3,8.3,8.3,8.4,8.3,8.3,0,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.6,8.5,8.6,8.6,8.6,8.6,8.6,8.6,8.5,8.6,8.5,8.4,8.2,8.4,7.9,8.1,7.8,7.9,8.2,8.4,7.9,7.8,7.7,7.9,0,8.7,8.2,8.6,8.2,7.9,8.1,7.8,8.4,8.3,8.6,8.3,8.4,8.3,9.3,8.9,8.8,8.5,8.6,8.2,9,8.7,9,9.1,8.7,8.6,8.8,9.06,0,8.6,8.2,8.9,8.6,8.5,8.4,7.4,8.6,8.4,8.4,8.5,8.6,8.7,8.1,8.4,8.6,9.2,9.4,9.6,9.1,0,8.9,8.64,8.77,8.5,9.2,8.7,0,8.5,8.3,8.5,8.5,8.4,8.5,9.7,8.5,8.4,8.6,8.3,8.7,8.4,8.7,8.8,8.4,8.7,8.8,8.6,8.7,8.4,8.4,8.4,8.3,8.4,8.3,8.7,8.3,8.4,8.6,8.7,8.2,8.5,8.4,8.7,8.6,8.2,8.4,8.7,8.6,8.8,8.4,8.4,8.5,8.4,8.4,8.5,8.3,8.2,8.5,8.4,8.6,8.6,8.5,8.3,8.0,8.4,8.5,8.5,8.5,8.4,8.4,0,8.4,8.4,8.3,8.6,8.4,8.4,0,8.4,8.4,8.3,8.6,8.4,8.4,8.4,8.4,8.5,8.4,8.5,8.3,8.4,8.4,8.6,8.6,8.5,8.5,8.6,8.4,8.2,8.3,8.3,8.5,8.4,8.2,8.3,8.5,0,0,0,0,0,0,8.7,8.7,8.7,8.6,8.6,8.5,8.6,8.4,8.5,8.5,8.4,8.5,8.5,8.6,8.4,8.4,8.5,8.4,8.5,8.3,8.4]
 temp=[7.7,7.3,7.4,7.6,7.1,7.2,7,6.7,8.4,8.5,8.5,8.6,8.5,9.2,0,13.7,13.6,14,14.1,15.3,13.8,12.8,12.7,12.6,12.8,13.1,13.2,13,12.8,12.7,12.6,12.8,13.1,13.2,13,27.6,27.6,28.4,29.2,28.3,28.6,28.7,30.1,28.6,28.3,29.3,28.8,29.1,29.9,0,24.8,24,24.7,24.9,25,25.1,19.9,20,20.6,20.6,20.3,20.4,20,11.8,10.4,10.5,10.7,10.2,10.8,11.3,11.5,10.6,10.5,11.6,10.7,10.3,10.1,0,6.8,7.1,7.3,7.3,7.2,7.3,6.6,6.6,6.7,6.9,6.7,6.6,6.7,10,9.6,9.8,10.1,9.7,9.7,10,0,18.5,20.2,16.8,16.5,20.3,17.0,0,20.9,20.8,20.1,20.3,20.4,20.6,19.0,25.0,24.8,25.2,25.1,24.7,25.3,22.0,24.7,24.6,24.3,24.7,24.9,24.8,23,23.4,23.4,23.6,23.5,23.6,23.6,24.8,24.5,24.8,24.7,24.2,23.8,24.1,23.69,23.2,23.7,24.0,25.2,23.3,23.7,5.8,5.7,6.2,6.3,6.4,6.6,6.8,5.6,5.4,6.6,6.6,6.7,6.8,6.8,8.5,7.5,9.3,9.4,9.4,9.5,9.5,0,10.5,11.3,11.4,11.9,11.5,12.0,0,19.5,20.3,20.4,20.9,20.5,20.0,21.9,23.9,24.0,20.4,24.0,24.1,23.9,25.0,29.0,29.2,28.7,29.0,29.1,28.5,23.0,26.2,26.1,26.0,25.0,26.3,26.0,0,0,0,0,0,0,0,19.1,19.8,20.1,19.9,20.0,20.1,20.0,11.1,12.5,12.8,12.9,13.1,13.1,13.4,8.3,8.9,9.2,9.5,9.4,9.6,9.6]
 asili_maddeler=[8,2,5,2,6,5,1,8,2,5,2,6,5,1,0,2,5,3,5,4,1,4,3,4,3,6,5,2,3,3,5,3,4,6,1,2,4,4,2,5,5,2,5,4,5,4,7,6,3,0,0,0,0,0,0,0,0,7,9,12,9,5,7,8,10,13,9,6,7,8,5,4,5,4,7,6,3,3,2,5,2,6,5,1,0,0,0,4,0,0,0,3,1,1,2,1,2,0,0,2,1,1,3,2,1,0,1,1,7,0,0,0,0,0,1,2,1,3,0,2,3,1,3,4,5,0,0,1,0,2,2,1,0,0,1,0,1.5,3,1,0,0,2,0,1,2,3,0,0.5,1,2,4,3,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.5,2.0,1.0,2.0,3.0,0.0,0.72,0.74,3.0,2.0,4.0,4.5,0.64,0.72,0.74,3.0,3.0,4.0,4.0,0.71,0,1.0,2.0,5.0,4.0,3.0,0.71,0,1.0,3.0,4.0,3.0,2.0,0.7,4.0,1.0,2.0,3.0,5.0,2.0,1.0,3.0,0.6,2.0,2.0,4.0,3.0,1.0,1.0,0.6,2.0,3.0,4.0,2.0,1.0,0,0,0,0,0,0,0,1.0,0.71,4.0,3.0,4.0,5.0,0.73,2.0,1.5,4.0,6.0,5.0,2.0,2.0,0.71,1.0,3.0,3.0,6.0,2.0,1.0]
@@ -22,22 +21,27 @@ esasion_cl=[8.6,38,42,44,72,68,51,20,60,60.2,61,67,61,63,0,34,36,44,82,28,33,11,
 esasion_hco3=[168,153,181,139,135,175,178,169,172,165,140,155,148,137,0,169,177,153,179,156,129,165,152,170,144,122,168,174,165,152,170,144,122,168,174,142,175,185,163,149,182,163,145,175,162,180,166,154,165,0,0,0,0,0,0,0,0,126,153,122,140,128,137,126,128,131,232,158,162,131,120,125,134,240,250,210,180,153,151,145,157,152,148,149,0,140,120,151,160,145,125,140,157,153,157,142,139,140,144,158,155,159,144,133,142,0,140,151,170,180,160,190,0,160,180,190,195,200,170,160,155,170,190,185,192,172,145,155,170,210,224,216,160,139,141,132,223,216,197,163,130,134,220,248,264,218,125,140,142,184,166,175,160,130,0,0,0,0,0,0,0,0,0,0,0,0,0,0,140.0,144.0,158.0,182.0,194.0,171.0,162.0,140.0,152.0,164.0,172.0,168.0,156.0,144.0,140.0,152.0,164.0,172.0,168.0,156.0,144.0,0,156.0,161.0,176.0,170.0,151.0,147.0,0,157.0,162.0,172.0,179.0,155.0,150.0,162.0,160.0,164.0,178.0,176.0,166.0,148.0,169.0,162.0,164.0,175.0,176.0,168.0,149.0,164.0,163.0,165.0,171.0,173.0,169.0,145.0,0,0,0,0,0,0,0,172.0,168.0,184.0,224.0,222.0,176.0,164.0,170.0,165.0,181.0,221.0,220.0,171.0,162.0,162.0,160.0,164.0,178.0,176.0,166.0,148.0]
 dates=["Yanvar 2018", "Fevral 2018", "Mart 2018", "Aprel 2018","May 2018","İyun 2018","İyul 2018","Sentyabr 2018","Oktyabr 2018","Noyabr 2018","Dekabr 2018","Yanvar 2019","Fevral 2019","Mart 2019","Aprel 2019","May 2019","İyun 2019","İyul 2019","Avqust 2019","Sentyabr 2019","Oktyabr 2019","Yanvar 2020","Fevral 2020","Mart 2020","Aprel 2020","May 2020","İyun 2020","İyul 2020","Avqust 2020","Sentyabr 2020","Oktyabr 2020","Noyabr 2020","Dekabr 2020"]
 menteqeler=['Taxtakörpü-ceyranbatan kanalı','Su götürücü qurğunun yanı','Cənub nasos stansiyasının yanı','Cənub-qərb dambası, sızma suları','Cənub dambası, sızma suları','Şimal-şərq dambası, sızma suları','Meliorasiya nasos stansiyasının girişi']
+path1='photo_1.jpg'
+path2='photo_2.jpg'
+path3='photo_3.jpg'
+path4='photo_4.jpg'
 def createceyran():
     ceyran=tk.Tk()
     ceyran.geometry("400x500")
-    image=Image.open("ceyran.png")
+    image=Image.open("ceyran.jpg")
     image= image.resize((300,205))
     image=ImageTk.PhotoImage(image)
     imaje=tk.Label(ceyran, image=image)
     mainbutton=Button(ceyran, text='Ceyranbatan infocenter',command=createstat)
+    secondbutton=Button(ceyran, text='Qalereya', command=createGallery)
     exitbtn=Button(ceyran, text='Cixis', command=ceyran.destroy)
     imaje.pack()
     mainbutton.pack()
+    secondbutton.pack()
     exitbtn.pack()
     ceyran.mainloop()
 def createstat():
-    ceyran.destroy
-    stat=tk.Tk()
+    stat=tk.Toplevel()
     stat.geometry('400x500') 
     def phstatistika():
         k=0
@@ -58,12 +62,8 @@ def createstat():
             k=h.index(0)
             del locations[k]
             del h[k]
-        fig=plt.figure()
-        ax=fig.add_subplot(111)
-        ax.plot(locations, h, 'g',marker='o')
-        ax.grid()
-        ax.set_title('Norma: 6,5-8,5', fontsize=15)
-        ax.set_xlabel('Menteqeler', fontsize=10)
+        plt.plot(locations, h, 'g',marker='o')
+        plt.grid()
         plt.show()
     def tempstatistika():
         k=0
@@ -84,12 +84,9 @@ def createstat():
             k=h.index(0)
             del locations[k]
             del h[k]
-        fig=plt.figure()
-        ax=fig.add_subplot(111)
-        ax.plot(locations, h, 'g',marker='o')
-        ax.grid()
-        ax.set_title('Norma: 6,5-8,5', fontsize=15)
-        ax.set_xlabel('Menteqeler', fontsize=10)
+        b=plt
+        plt.plot(locations,h,'g', marker='o')
+        plt.grid()
         plt.show()
     def asilimaddestatistika():
         k=0
@@ -110,12 +107,8 @@ def createstat():
             k=h.index(0)
             del locations[k]
             del h[k]
-        fig=plt.figure()
-        ax=fig.add_subplot(111)
-        ax.plot(locations, h, 'g',marker='o')
-        ax.grid()
-        ax.set_title('Norma: 6,5-8,5', fontsize=15)
-        ax.set_xlabel('Menteqeler', fontsize=10)
+        plt.plot(locations,h,'g', marker='o')
+        plt.grid()
         plt.show()
     def bulaniqliqstatistika():
         k=0
@@ -136,12 +129,8 @@ def createstat():
             k=h.index(0)
             del locations[k]
             del h[k]
-        fig=plt.figure()
-        ax=fig.add_subplot(111)
-        ax.plot(locations, h, 'g',marker='o')
-        ax.grid()
-        ax.set_title('Norma: 6,5-8,5', fontsize=15)
-        ax.set_xlabel('Menteqeler', fontsize=10)
+        plt.plot(locations,h,'g', marker='o')
+        plt.grid()
         plt.show()
     def qelevilikstat():
         k=0
@@ -162,12 +151,8 @@ def createstat():
             k=h.index(0)
             del locations[k]
             del h[k]
-        fig=plt.figure()
-        ax=fig.add_subplot(111)
-        ax.plot(locations, h, 'g',marker='o')
-        ax.grid()
-        ax.set_title('Norma: 6,5-8,5', fontsize=15)
-        ax.set_xlabel('Menteqeler', fontsize=10)
+        plt.plot(locations,h,'g', marker='o')
+        plt.grid()
         plt.show()
     def elekstatistika():
         k=0
@@ -188,12 +173,8 @@ def createstat():
             k=h.index(0)
             del locations[k]
             del h[k]
-        fig=plt.figure()
-        ax=fig.add_subplot(111)
-        ax.plot(locations, h, 'g',marker='o')
-        ax.grid()
-        ax.set_title('Norma: 6,5-8,5', fontsize=15)
-        ax.set_xlabel('Menteqeler', fontsize=10)
+        plt.plot(locations,h,'g', marker='o')
+        plt.grid()
         plt.show()
     def hellolmusqazlar_mql_statistika():
         k=0
@@ -214,12 +195,8 @@ def createstat():
             k=h.index(0)
             del locations[k]
             del h[k]
-        fig=plt.figure()
-        ax=fig.add_subplot(111)
-        ax.plot(locations, h, 'g',marker='o')
-        ax.grid()
-        ax.set_title('Norma: 6,5-8,5', fontsize=15)
-        ax.set_xlabel('Menteqeler', fontsize=10)
+        plt.plot(locations,h,'g', marker='o')
+        plt.grid()
         plt.show()
     def hellolmusqazlar_faiz_statistika():
         k=0
@@ -240,12 +217,8 @@ def createstat():
             k=h.index(0)
             del locations[k]
             del h[k]
-        fig=plt.figure()
-        ax=fig.add_subplot(111)
-        ax.plot(locations, h, 'g',marker='o')
-        ax.grid()
-        ax.set_title('Norma: 6,5-8,5', fontsize=15)
-        ax.set_xlabel('Menteqeler', fontsize=10)
+        plt.plot(locations,h,'g', marker='o')
+        plt.grid()
         plt.show()
     def co2_statistika():
         k=0
@@ -266,14 +239,10 @@ def createstat():
             k=h.index(0)
             del locations[k]
             del h[k]
-        fig=plt.figure()
-        ax=fig.add_subplot(111)
-        ax.plot(locations, h, 'g',marker='o')
-        ax.grid()
-        ax.set_title('Norma: 6,5-8,5', fontsize=15)
-        ax.set_xlabel('Menteqeler', fontsize=10)
+        plt.plot(locations,h,'g', marker='o')
+        plt.grid()
         plt.show()
-    back=Button(stat, text='Geri', command=createceyran and stat.destroy)
+    back=Button(stat, text='Geri', command=stat.destroy)
     phbtn=Button(stat, text='Ph statistikası',command=phstatistika)
     tempbtn=Button(stat, text='Temperatur statistikası',command=tempstatistika)
     asilimaddebtn=Button(stat, text='Asılı maddələr statistikası', command=asilimaddestatistika)
@@ -294,15 +263,49 @@ def createstat():
     co2btn.pack()
     qelevibtn.pack()
     stat.mainloop()
+def createGallery():
+    Gallery=tk.Toplevel()
+    Gallery.geometry('600x500')
+    img1 = ImageTk.PhotoImage((Image.open(path1)).resize((300,250)))
+    panel1 = tk.Label(Gallery, image = img1)
+    img2 = ImageTk.PhotoImage((Image.open(path2)).resize((300,250)))
+    panel2 = tk.Label(Gallery, image = img2)
+    img3 = ImageTk.PhotoImage((Image.open(path3)).resize((300,250)))
+    panel3 = tk.Label(Gallery, image = img3)
+    img4 = ImageTk.PhotoImage((Image.open(path4)).resize((300,250)))
+    panel4 = tk.Label(Gallery, image = img4)
+    back=Button(Gallery, text='Geri', command=createceyran and Gallery.destroy)
+    back.pack(side='right')
+    panel1.pack(side='left')
+    panel2.pack(side='left')
+    panel3.pack(side='top')
+    panel4.pack(side='top')
+    Gallery.mainloop()
+def createinfo():
+    Info=tk.Toplevel()
+    Info.geometry('500x400')
+    T=tk.Text(Info, height = 5, width = 52)
+    l = Label(Info, text = "Melumat")
+    back=Button(Info, text='Geri', command=Info.destroy)
+    lookatstats=Button(Info, text='Statlara bax', command=createstat)
+    melumat='informasiya'
+    l.pack()
+    T.pack()
+    back.pack()
+    lookatstats.pack()
+    T.insert(tk.END, melumat)
+    Info.mainloop()
 ceyran=tk.Tk()
 ceyran.geometry("400x500")
-image=Image.open("ceyran.png")
+image=Image.open("ceyran.jpg")
 image= image.resize((300,205))
 image=ImageTk.PhotoImage(image)
 imaje=tk.Label(ceyran, image=image)
-mainbutton=Button(ceyran, text='Ceyranbatan infocenter',command=createstat)
+mainbutton=Button(ceyran, text='Ceyranbatan infocenter',command=createinfo)
+secondbutton=Button(ceyran, text='Qalereya', command=createGallery)
 exitbtn=Button(ceyran, text='Cixis', command=ceyran.destroy)
 imaje.pack()
 mainbutton.pack()
+secondbutton.pack()
 exitbtn.pack()
 ceyran.mainloop()
