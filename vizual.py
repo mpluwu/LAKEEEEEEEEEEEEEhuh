@@ -62,6 +62,23 @@ def createstat():
             k=h.index(0)
             del locations[k]
             del h[k]
+        num=[]
+        for i in range(len(h)):
+            num.append(i+1)
+        abc=[]
+        root=tk.Toplevel()
+        root.geometry('500x400')
+        columns = ('say','menteqeler', 'qiymetler')
+        tree = Treeview(root, columns=columns)
+        tree.heading('say', text='Sayi')
+        tree.heading('menteqeler', text='Menteqe')
+        tree.heading('qiymetler', text='Qiymet')
+        for i in range(len(num)):
+            abc.append((num[i], locations[i], h[i]))
+        for i in abc:
+            tree.insert('',tk.END, values=i)
+        tree.pack()
+        root.mainloop()
         plt.plot(locations, h, 'g',marker='o')
         plt.grid()
         plt.show()
