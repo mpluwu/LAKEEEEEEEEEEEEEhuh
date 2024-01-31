@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import tkinter as tk
 from tkinter import simpledialog
 from tkinter import messagebox
@@ -12,7 +11,7 @@ codluq=[3.2,3.2,3,3.3,3.4,3.3,3,3.4,3.8,4.2,3.4,3,2.92,3.2,0,3.2,3,3.1,3,2.9,3.3
 qelevilik=[150,173,176,173,170,167,179,840,900,890,840,850,890,900,0,350,325,345,380,325,345,141,162,159,159,159,159,162,141,162,159,159,159,159,162,132,138,123,150,482,135,129,112,120,92,135,133,118,117,0,0,0,0,0,0,0,0,150,1665,1615,1614,1504,620,150,173,170,600,170,176,173,114,102,110,122,118,131,120,120,170,150,300,153,163,173,0,173,170,182,173,176,170,173,183,181,150,153,158,150,134,118,124,141,112,108,120,0,180,193,200,207,183,197,0,173,145,153,157,153,150,153,140,120,133,152,144,135,120,134,142,151,144,144,110,132,150,153,156,147,150,153,131,122,141,152,146,136,117,130,140,120,150,136,124,142,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 qoxu=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 dates=["Yanvar 2018", "Fevral 2018", "Mart 2018", "Aprel 2018","May 2018","İyun 2018","İyul 2018","Sentyabr 2018","Oktyabr 2018","Noyabr 2018","Dekabr 2018","Yanvar 2019","Fevral 2019","Mart 2019","Aprel 2019","May 2019","İyun 2019","İyul 2019","Avqust 2019","Sentyabr 2019","Oktyabr 2019","Yanvar 2020","Fevral 2020","Mart 2020","Aprel 2020","May 2020","İyun 2020","İyul 2020","Avqust 2020","Sentyabr 2020","Oktyabr 2020","Noyabr 2020","Dekabr 2020"]
-menteqeler=['Taxtakörpü-ceyranbatan kanalı','Su götürücü qurğunun yanı','Cənub nasos stansiyasının yanı','Cənub-qərb dambası, sızma suları','Cənub dambası, sızma suları','Şimal-şərq dambası, sızma suları','Meliorasiya nasos stansiyasının girişi']
+menteqeler=['Taxtakörpü-Ceyranbatan kanalı','Su götürücü qurğunun yanı','Cənub nasos stansiyasının yanı','Cənub-qərb dambası, sızma suları','Cənub dambası, sızma suları','Şimal-şərq dambası, sızma suları','Meliorasiya nasos stansiyasının girişi']
 path1='photo_1.jpg'
 path2='photo_2.jpg'
 path3='photo_3.jpg'
@@ -24,9 +23,9 @@ def createceyran():
     image= image.resize((300,205))
     image=ImageTk.PhotoImage(image)
     imaje=tk.Label(ceyran, image=image)
-    mainbutton=Button(ceyran, text='Ceyranbatan infocenter',command=createinfo)
+    mainbutton=Button(ceyran, text='Ceyranbatan Su Anbarı İnfocenter',command=createinfo)
     secondbutton=Button(ceyran, text='Qalereya', command=createGallery)
-    exitbtn=Button(ceyran, text='Cixis', command=ceyran.destroy)
+    exitbtn=Button(ceyran, text='Çıxış', command=ceyran.destroy)
     imaje.pack()
     mainbutton.pack()
     secondbutton.pack()
@@ -62,19 +61,25 @@ def createstat():
         root.geometry('500x400')
         columns = ('say','menteqeler', 'qiymetler')
         tree = Treeview(root, columns=columns)
-        tree.heading('say', text='Sayi')
-        tree.heading('menteqeler', text='Menteqe')
-        tree.heading('qiymetler', text='Qiymet')
+        tree.heading('say', text='Say')
+        tree.heading('menteqeler', text='Məntəqə')
+        tree.heading('qiymetler', text='Qiyməti')
         for i in range(len(num)):
             abc.append((num[i], locations[i], h[i]))
         for i in abc:
             tree.insert('',tk.END, values=i)
-        sonrabtn=Button(root, text='Sonraki', command=tempstatistika)
+        sonrabtn=Button(root, text='Sonrakı', command=tempstatistika)
         tree.pack()
         sonrabtn.pack()
         plt.plot(locations, h, 'g',marker='o')
         plt.grid()
         plt.show()
+        if (sum(h)/len(h))>8.5 or (sum(h)/len(h))<6.5:
+            answer=messagebox.askyesno("error","Qiymətlərdə uyğunsuzluq müşahidə olunur. Müvafiq orqanlara xəbərdarlıq göndərilsinmi?")
+            if answer:
+                messagebox.showinfo("sending", "Xəbərdarlıq göndərilir.")
+            else:
+                messagebox.showinfo("not sent", "Xəbərdarlıq göndərilmədi.")
         root.mainloop()
     def tempstatistika():
         k=0
@@ -103,14 +108,14 @@ def createstat():
         root.geometry('500x400')
         columns = ('say','menteqeler', 'qiymetler')
         tree = Treeview(root, columns=columns)
-        tree.heading('say', text='Sayi')
-        tree.heading('menteqeler', text='Menteqe')
-        tree.heading('qiymetler', text='Qiymet')
+        tree.heading('say', text='Sayı')
+        tree.heading('menteqeler', text='Məntəqə')
+        tree.heading('qiymetler', text='Qiyməti')
         for i in range(len(num)):
             abc.append((num[i], locations[i], h[i]))
         for i in abc:
             tree.insert('',tk.END, values=i)
-        sonrabtn=Button(root, text='Sonraki', command=elekstatistika)
+        sonrabtn=Button(root, text='Sonrakı', command=elekstatistika)
         tree.pack()
         sonrabtn.pack()
         plt.plot(locations, h, 'g',marker='o')
@@ -144,14 +149,14 @@ def createstat():
         root.geometry('500x400')
         columns = ('say','menteqeler', 'qiymetler')
         tree = Treeview(root, columns=columns)
-        tree.heading('say', text='Sayi')
-        tree.heading('menteqeler', text='Menteqe')
-        tree.heading('qiymetler', text='Qiymet')
+        tree.heading('say', text='Sayı')
+        tree.heading('menteqeler', text='Məntəqə')
+        tree.heading('qiymetler', text='Qiyməti')
         for i in range(len(num)):
             abc.append((num[i], locations[i], h[i]))
         for i in abc:
             tree.insert('',tk.END, values=i)
-        sonrabtn=Button(root, text='Sonraki', command=codluqstatistika)
+        sonrabtn=Button(root, text='Sonrakı', command=codluqstatistika)
         tree.pack()
         sonrabtn.pack()
         plt.plot(locations, h, 'g',marker='o')
@@ -185,9 +190,9 @@ def createstat():
         root.geometry('500x400')
         columns = ('say','menteqeler', 'qiymetler')
         tree = Treeview(root, columns=columns)
-        tree.heading('say', text='Sayi')
-        tree.heading('menteqeler', text='Menteqe')
-        tree.heading('qiymetler', text='Qiymet')
+        tree.heading('say', text='Sayı')
+        tree.heading('menteqeler', text='Məntəqə')
+        tree.heading('qiymetler', text='Qiyməti')
         for i in range(len(num)):
             abc.append((num[i], locations[i], h[i]))
         for i in abc:
@@ -224,9 +229,9 @@ def createstat():
         root.geometry('500x400')
         columns = ('say','menteqeler', 'qiymetler')
         tree = Treeview(root, columns=columns)
-        tree.heading('say', text='Sayi')
-        tree.heading('menteqeler', text='Menteqe')
-        tree.heading('qiymetler', text='Qiymet')
+        tree.heading('say', text='Sayı')
+        tree.heading('menteqeler', text='Məntəqə')
+        tree.heading('qiymetler', text='Qiyməti')
         for i in range(len(num)):
             abc.append((num[i], locations[i], h[i]))
         for i in abc:
@@ -259,9 +264,9 @@ def createstat():
         root.geometry('500x400')
         columns = ('say','menteqeler', 'qiymetler')
         tree = Treeview(root, columns=columns)
-        tree.heading('say', text='Sayi')
-        tree.heading('menteqeler', text='Menteqe')
-        tree.heading('qiymetler', text='Qiymet')
+        tree.heading('say', text='Sayı')
+        tree.heading('menteqeler', text='Məntəqə')
+        tree.heading('qiymetler', text='Qiyməti')
         for i in range(len(num)):
             abc.append((num[i], locations[i], h[i]))
         for i in abc:
@@ -277,7 +282,7 @@ def createstat():
         fizikiler.geometry("200x200")
         phbtn=Button(fizikiler, text='Ph statistikası',command=phstatistika)
         tempbtn=Button(fizikiler, text='Temperatur statistikası',command=tempstatistika)
-        elekbtn=Button(fizikiler, text='Elektrik ke,iricilik statistikasi', command=elekstatistika)
+        elekbtn=Button(fizikiler, text='Elektrik keçiricilik statistikası', command=elekstatistika)
         back=Button(fizikiler, text='Geri', command=fizikiler.destroy)
         phbtn.pack()
         tempbtn.pack()
@@ -288,7 +293,7 @@ def createstat():
         kimyalar=tk.Toplevel()
         kimyalar.geometry("200x200")
         qelevibtn=Button(kimyalar, text='Qelevilik statistikası', command=qelevilikstat)
-        codbtn=Button(kimyalar, text='Codluq statistikasi', command=codluqstatistika)
+        codbtn=Button(kimyalar, text='Codluq statistikası', command=codluqstatistika)
         back=Button(kimyalar, text='Geri', command=kimyalar.destroy)
         qelevibtn.pack()
         codbtn.pack()
@@ -296,14 +301,14 @@ def createstat():
     def orqanlar():
         orqanaleptik=tk.Toplevel()
         orqanaleptik.geometry("200x200")
-        qoxubtn=Button(orqanaleptik, text='Qoxu statistikasi', command=qoxustat)
+        qoxubtn=Button(orqanaleptik, text='Qoxu statistikası', command=qoxustat)
         back=Button(orqanaleptik, text='Geri', command=orqanaleptik.destroy)
         qoxubtn.pack()
         back.pack(side='right')
         orqanaleptik.mainloop()
-    fiziki_btn=Button(stat, text='Fiziki parametrler', command=fizikpler)
-    kimya_btn=Button(stat, text="Kimyevi parametrler", command=kimyepler)
-    orqanaleptik_btn=Button(stat, text='Orqanaleptik parametrler', command=orqanlar)
+    fiziki_btn=Button(stat, text='Fiziki parametrlər', command=fizikpler)
+    kimya_btn=Button(stat, text="Kimyəvi parametrlər", command=kimyepler)
+    orqanaleptik_btn=Button(stat, text='Orqanaleptik parametrlər', command=orqanlar)
     fiziki_btn.pack()
     kimya_btn.pack()
     orqanaleptik_btn.pack()
@@ -329,14 +334,19 @@ def createGallery():
     Gallery.mainloop()
 def createinfo():
     Info=tk.Toplevel()
-    Info.geometry('500x400')
-    T=tk.Text(Info, height = 5, width = 52)
-    l = Label(Info, text = "Melumat")
+    Info.geometry('700x700')
+    T=tk.Text(Info, height = 5, width = 57)
+    l = Label(Info, text = "Məlumat")
     back=Button(Info, text='Geri', command=Info.destroy)
     lookatstats=Button(Info, text='Statlara bax', command=createstat)
-    melumat='informasiya'
+    melumat='Samur-Abşeron kanalından qidalanan Ceyranbatan su anbarı və anbarın sahilində tikilmiş su təmizləyici qurğular kompleksi Abşeron yarımadasının içməli su təchizatında böyük paya malikdir.'
+    image=Image.open("ceyran.jpg")
+    image= image.resize((400,500))
+    image=ImageTk.PhotoImage(image)
+    imaje=tk.Label(Info, image=image)
     l.pack()
     T.pack()
+    imaje.pack()
     back.pack()
     lookatstats.pack()
     T.insert(tk.END, melumat)
@@ -346,5 +356,5 @@ titul.geometry('500x400')
 image=Image.open("ceyran.jpg")
 image= image.resize((400,500))
 image=ImageTk.PhotoImage(image)
-titulbtn=Button(titul, text = 'Click Me !', image = image, command=createceyran).pack()
+titulbtn=Button(titul, text = 'kliklə', image = image, command=createceyran).pack()
 titul.mainloop()
